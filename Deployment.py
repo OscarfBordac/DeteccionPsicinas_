@@ -26,7 +26,7 @@ def draw_boxes(image, predictions):
         cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 1)
 
         # Añadir etiqueta con confianza
-        label = f"Piscinas {pred['confidence']:.2f}"
+        label = f"Conf {pred['confidence']:.2f}"
         cv2.putText(img, label, (x1, y1-10),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
 
@@ -59,7 +59,7 @@ if uploaded_file is not None:
         col1, col2 = st.columns(2)
         with col1:
             st.header("Imagen Original")
-            st.image(image)
+            st.image(image, width=500)
 
         # Hacer predicción
         with st.spinner('Analizando imagen...'):
@@ -69,7 +69,7 @@ if uploaded_file is not None:
         with col2:
             st.header("Detecciones")
             result_image = draw_boxes(image, predictions['predictions'])
-            st.image(result_image)
+            st.image(result_image, width=500)
 
         # Mostrar resultados detallados
         st.header("Resultados Detallados")
