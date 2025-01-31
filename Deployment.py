@@ -32,7 +32,7 @@ def draw_boxes(image, predictions):
 
     return cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-st.title("Detector de Piletas")
+st.title("Detector de Piscinas")
 
 # Cargar modelo
 model = init_roboflow()
