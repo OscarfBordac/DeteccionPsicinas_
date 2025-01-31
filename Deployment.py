@@ -23,12 +23,12 @@ def draw_boxes(image, predictions):
         y2 = int(y1 + pred['height'])
 
         # Dibujar rectángulo
-        cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
+        cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 1)
 
         # Añadir etiqueta con confianza
-        label = f"Pileta {pred['confidence']:.2f}"
+        label = f"Piscinas {pred['confidence']:.2f}"
         cv2.putText(img, label, (x1, y1-10),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
 
     return cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
@@ -73,7 +73,7 @@ if uploaded_file is not None:
 
         # Mostrar resultados detallados
         st.header("Resultados Detallados")
-        st.write(f"Se encontraron {len(predictions['predictions'])} piletas")
+        st.write(f"Se encontraron {len(predictions['predictions'])} Piscinas")
 
         # Crear tabla de resultados
         if len(predictions['predictions']) > 0:
