@@ -26,9 +26,9 @@ def draw_boxes(image, predictions):
         cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 1)
 
         # Añadir etiqueta con confianza
-        label = f"Conf {pred['confidence']:.2f}"
+        label = f"{pred['confidence']:.2f}"
         cv2.putText(img, label, (x1, y1-10),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.3, (0, 255, 0), 1)
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.2, (0, 255, 0), 1)
 
     return cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
