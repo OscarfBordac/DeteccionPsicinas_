@@ -9,7 +9,7 @@ import io
 @st.cache_resource
 def init_roboflow():
     rf = Roboflow(api_key="HMtpnDxMMpTmWHSXsxKV")
-    return rf.workspace("ofbordac").project("piscinas-3dwyx").version(4).model
+    return rf.workspace("ofbordac").project("piscinas-3dwyx").version(6).model
 
 def draw_boxes(image, predictions):
     """Dibuja las cajas de predicción en la imagen"""
