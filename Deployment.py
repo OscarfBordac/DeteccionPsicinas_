@@ -80,7 +80,7 @@ if uploaded_file is not None:
             results_data = []
             for i, pred in enumerate(predictions['predictions'], 1):
                 results_data.append({
-                    "Pileta #": i,
+                    "Piscina #": i,
                     "Confianza": f"{pred['confidence']:.2f}%",
                     "Centro X": f"{pred['x']:.1f}",
                     "Centro Y": f"{pred['y']:.1f}",
