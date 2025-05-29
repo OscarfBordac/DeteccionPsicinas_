@@ -92,13 +92,13 @@ if uploaded_file is not None:
             st.table(results_data)
 
             # Mostrar coordenadas detalladas
-            with st.expander("Ver coordenadas detalladas"):
+            with st.expander("Coordenadas detalladas"):
                 for i, pred in enumerate(predictions['predictions'], 1):
                     x1 = pred['x'] - pred['width'] / 2
                     y1 = pred['y'] - pred['height'] / 2
                     x2 = x1 + pred['width']
                     y2 = y1 + pred['height']
-                    st.write(f"Pileta #{i}:")
+                    st.write(f"Piscina #{i}:")
                     st.write(f"- Esquina superior izquierda: ({x1:.1f}, {y1:.1f})")
                     st.write(f"- Esquina inferior derecha: ({x2:.1f}, {y2:.1f})")
 
